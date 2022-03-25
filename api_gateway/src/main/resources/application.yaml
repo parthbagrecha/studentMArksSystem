@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: student_details_service
+          uri: lb://student_details_service
+          predicates:          - Path = /student/**
+        - id: student_marks_service
+          uri: lb://student_marks_service
+          predicates:
+          - Path = /marks/**
